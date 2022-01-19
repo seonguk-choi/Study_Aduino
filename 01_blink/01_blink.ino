@@ -1,23 +1,36 @@
-int ledR = 13;
-
+int ledR = 9;
+int ledG = 10;
 //한번만 실행 : 환경설정
 void setup() {
   pinMode(ledR, OUTPUT);
+  pinMode(ledG, OUTPUT);
 }
 
 // 계속해서 반복 실행
 void loop() {
-  digitalWrite(ledR, HIGH);
-  delay(500);
-  digitalWrite(ledR, LOW);
-  delay(500);
-  digitalWrite(12, HIGH);
-  delay(1000);
-  digitalWrite(12, LOW);
-  delay(1000);
-  digitalWrite(11, HIGH);
-  delay(1500);
-  digitalWrite(11, LOW);
-  delay(1500);
-  
+  analogWrite(ledR, 50);
+  delay(100);
+  analogWrite(ledR, 100);
+  delay(100);
+  analogWrite(ledR, 150);
+  delay(100);
+  analogWrite(ledR, 200);
+  delay(100);
+  analogWrite(ledR, 255);
+  delay(100);
+  analogWrite(ledR, 0);
+  delay(100);
+  analogWrite(ledG, 50);
+  delay(100);
+   analogWrite(ledG, 100);
+  delay(100);
+  analogWrite(ledG, 150);
+  delay(100);
+  analogWrite(ledG, 200);
+  delay(100);
+  analogWrite(ledG, 255);
+  delay(100);
+  analogWrite(ledG, 0);
+  delay(100);
+
 }
