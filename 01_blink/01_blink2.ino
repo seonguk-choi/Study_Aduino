@@ -1,6 +1,5 @@
-int ledR = 10;
-int ledG = 9;
-int ledY = 11;
+int ledR = 9;
+int ledG = 10;
 int btn1 = 8;
 int btn1Value = 0;
 
@@ -21,7 +20,6 @@ void setup() {
   
   pinMode(ledR, OUTPUT);
   pinMode(ledG, OUTPUT);
-  pinMode(ledY, OUTPUT);
   pinMode(btn1, INPUT);
 }
 
@@ -44,9 +42,9 @@ void loop() {
 //    }
 
     Serial.print("btn1Value : ");
-    Serial.println(btn1Value);
+    Serial.print(btn1Value);
     Serial.print(", before : ");
-    Serial.println(before);
+    Serial.print(before);
     Serial.print(", cnt : ");
     Serial.println(cnt);
         
@@ -62,14 +60,14 @@ void loop() {
       before = 0;
     }
     
-    if(cnt == 1){
+    if(cnt == 0){
       digitalWrite(ledR, LOW);
-      digitalWrite(ledG, HIGH);
-    } else if(cnt == 2){
       digitalWrite(ledG, LOW);
-      digitalWrite(ledY, HIGH);
-    }else{
-      digitalWrite(ledY, LOW);
+    } else if(cnt == 1){
       digitalWrite(ledR, HIGH);
+      digitalWrite(ledG, LOW);
+    }else if(cnt == 2){
+      digitalWrite(ledR, HIGH);
+      digitalWrite(ledG, HIGH);
     }
 }
