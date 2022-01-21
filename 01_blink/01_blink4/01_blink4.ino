@@ -2,8 +2,18 @@
 
 String str = "";
 
+int ledR = 9;
+int ledY = 10;
+int ledG = 11;
+
+int val = 0;
+
 void setup() {
     Serial.begin(9600);
+
+    pinMode(ledR, OUTPUT);
+    pinMode(ledY, OUTPUT);
+    pinMode(ledG, OUTPUT);
 
 }
 
@@ -20,8 +30,29 @@ void loop() {
 //      Serial.println(str);
 
 //      숫자로 읽어들임
-        int val = Serial.parseInt();
-        Serial.println(val);        
+        val = Serial.parseInt();
+        Serial.println(val);   
 
     }
+
+
+    if(val == 1) {
+      digitalWrite(ledR, HIGH);
+      digitalWrite(ledY, LOW);
+      digitalWrite(ledG, LOW);
+    } else if(val == 2) {
+      digitalWrite(ledR, LOW);
+      digitalWrite(ledY, HIGH);
+      digitalWrite(ledG, LOW);
+    } else if(val == 3) {
+      digitalWrite(ledR, LOW);
+      digitalWrite(ledY, LOW);
+      digitalWrite(ledG, HIGH);
+    } else if(val == 4){
+      digitalWrite(ledR, LOW);
+      digitalWrite(ledY, LOW);
+      digitalWrite(ledG, LOW);
+    }
+
+    
 }
