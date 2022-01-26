@@ -1,6 +1,6 @@
 #include <SoftwareSerial.h>
 
-SoftwareSerial mySerial(10, 9); // RX:9번핀, TX:10번핀
+SoftwareSerial mySerial(10, 11); // RX:9번핀, TX:10번핀
 
 void setup() {
   Serial.begin(9600);
